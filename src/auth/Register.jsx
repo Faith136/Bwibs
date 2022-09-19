@@ -24,7 +24,8 @@ const onSignUpHandle = () => {
 }
 
     return (
-<div className='bg-white px-10 py-20 rounded-3xl border-2'>
+        <div className=" w-full px-96">
+<div className='bg-slate-300 px-10 py-13 rounded-3xl  border-2'>
         <h4 className='text-5xl font semibold'>Create account</h4>
         <p className='font-medium text-lg text-gray-500 mt-4'>Welcome back please enter your detais</p>
         <div className='mt-8'>
@@ -66,6 +67,6 @@ const onSignUpHandle = () => {
         Sign-in with Google</button>
 </div>
 </div>
-    </div>
+    </div></div>
     );
 }

@@ -1,3 +1,5 @@
+
+
 import * as React from "react";
 import Navbar from './components/Navbar';
 import './App.css';
@@ -8,7 +10,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Userbox from "./Userbox";
 import Menu from "./Menu";
 import Table from "./Table";
-
+import About from "./About";
+import Loader from "./Loader";
+import CreateItem from "./CreateItem";
+import Cart from "./Cart";
+import CartContainer from "./components/CartContainer";
 //import { Route, Router } from 'react-router-dom';
 
 /*import { useState, useEffect } from 'react';
@@ -30,11 +36,13 @@ import { onAuthStateChanged } from 'firebase/auth';
      <Routes>
       <Route path="/Userbox" element={<Userbox />} />
       <Route path="/Main" element={<Main />} />
-      <Route path="/Menu" element={<Menu />}>
-      
-        </Route>
+      <Route path="/Menu" element={<Menu />} />
       <Route path="/Table" element={<Table />} />
-      
+      <Route path="/About" element={<About />} />
+      <Route path="/Cart" element={<Cart />} />
+      <Route path="/CartContainer" element={<CartContainer />} />
+      <Route path="/Loader" element={<Loader />} />
+      <Route path="/CreateItem" element={<CreateItem />} />
      </Routes>
    </BrowserRouter> 
     </>

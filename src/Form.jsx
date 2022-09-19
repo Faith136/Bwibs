@@ -6,7 +6,8 @@ export default function Form({
     setUser
 }) {
     return (
-<div className='bg-white px-10 py-15 rounded-3xl border-2'>
+        <div className="w-full px-96">
+<div className='bg-slate-300 px-10 py-15 rounded-3xl border-2'>
         <h4 className='text-5xl font semibold'>Login</h4>
         <p className='font-medium text-lg text-gray-500 mt-4'>Welcome back please enter your detais</p>
         <div className='mt-8'>
@@ -41,6 +42,6 @@ export default function Form({
          className="text-violet-500 text-base font-medium ml-2">Sign up</button>
         </div>
 </div>
-    </div>
+    </div></div>
     );
 }

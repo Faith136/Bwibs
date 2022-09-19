@@ -13,14 +13,11 @@ const firebaseConfig = {
   messagingSenderId: "458317329774",
   appId: "1:458317329774:web:18586db8b2f787edff7d7f"
 };
-
-const app = initializeApp(firebaseConfig);
 const database = getDatabase();
 
 export default function Table() {
-  const [valid, setValid] = useState(true);
-  const [hide, sethide] = useState(true);
-  const [show, setshow] = useState(true);
+  const [valid, setvalid] = useState(true);
+  const [show, setShow] = useState(true);
 
   const handleSubmit = (e) => {
    e.preventDefault();
@@ -28,21 +25,22 @@ export default function Table() {
    const book_time = document.getElementById('book-time');
    const book_number = document.getElementById('book-number');
 
-   if(!book-date.value || !book-time.value || !book-number.value ){
+   if(!book_date.value || !book_time.value || !book_number.value ){
     alert('Please fill in the above details');
    } else{
     writeUserData();
    }
    function writeUserData() {
     const db = getDatabase();
-    set(ref(db, 'table reservation details'), {
-      bookig_date: book-date.value,
-     bookig_time: book-time.value,
-      bookig_number: book-number.value,
+    set(ref(db, 'data/'), {
+      bookigdate: book_date.value,
+     bookigtime: book_time.value,
+      bookignumber: book_number.value,
     });
    }
    alert('Your reservation has been confirmed')
-
+const BookPageDiv = document.querySelector('.box');
+setvalid(!valid + BookPageDiv.classList.add('show'));
    
   }
   return (
@@ -93,9 +91,7 @@ export default function Table() {
     </div>
   </form>
 </div>
-<div className="input data"><p className='text-base font-bold px-3'>
-    <button className='bg-cyan-600 px-2 rounded-md'>ORDER FOOD</button></p>
-    </div>
+
 <div className='px-4'>
 <p className='text-base font-bold px-3'>
   <button className='bg-cyan-600 px-2 rounded-md' type='submit'>RESERVE</button></p>

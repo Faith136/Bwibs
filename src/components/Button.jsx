@@ -20,7 +20,7 @@ signOut(auth)
   return (
     <div>
        <Link to="Userbox">
-        <button onClick={onSignUpHandle}>logout</button>
+        <button onClick={onSignUpHandle}>Logout</button>
        </Link>
     </div>
   )
