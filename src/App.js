@@ -16,8 +16,9 @@ import CreateItem from "./CreateItem";
 import Cart from "./Cart";
 import CartContainer from "./components/CartContainer";
 //import { Route, Router } from 'react-router-dom';
-
-/*import { useState, useEffect } from 'react';
+import { useState } from 'react';
+//import { useEffect } from "react";
+/*
 import Register from './auth/Register';
 import Menu from './Menu';
 import { auth } from './fire';
@@ -25,12 +26,37 @@ import { onAuthStateChanged } from 'firebase/auth';
 //import { async } from '@firebase/util';
 */
  function App() {
+  
+const [show, setShow] = useState();
+const [cart, setCart] = useState([]);
+
+const handleClick = (n) => {
+  if (cart.indexOf(n) !== -1) return;
+  setCart([...cart, n]);
+}
+
+const handleChange = (n, d) => {
+  const ind = cart.indexOf(n);
+  const arr = cart;
+  arr[ind].amount += d;
+
+  if (arr[ind].amount === 0) arr[ind].amount = 1; setCart([...arr]);
+};
+
+//useEffect(() => {
+ // console.log("cart change");
+//}, [cart])
+
   return (
   <>   
   <BrowserRouter> 
-     <Navbar /> 
+     <Navbar setShow={setShow} size={cart.length}/> 
         
-      
+      {
+        show ? (<Menu handleClick={handleClick}/>) : (
+        <Cart cart={cart} setCart={setCart} handleChange={handleChange}/>
+        )
+      }
     
      
      <Routes>

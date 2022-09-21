@@ -12,7 +12,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
 //import { useState } from 'react';
 //import { getAllFoodItems } from "./firefunctions";
 
-export default function Menu()  {
+export default function Menu({handleClick})  {
 
 
   return (
@@ -51,15 +51,20 @@ export default function Menu()  {
     <div className='w-full grid grid-cols-2 px-1 gap-x-2 gap-y-3'>
     
       {heroData && heroData.map(n =>(
-        <div key={n.id} className='w-full  h-auto'>
+        <div key={n.id} n={n} handleClick={handleClick} className='w-full  h-auto'>
         <div className='rounded-xl relative'>
         {/* Overlay */}
         <div className='absolute w-full h-full bg-black/50 rounded-xl text-white'>
           <p className='font-bold text-2xl px-2 pt-4'>{n.name}</p>
           <p className='px-2'>{n.desc}</p>
           <p className='text-base font-extrabold px-3'><span>Ksh.</span>{n.price}</p>
-          <button className='border-white bg-orange-700 px-6 rounded-md text-black text-lg font-extrabold
-           mx-2 absolute bottom-10'>Order Now</button>
+          
+            <button className='border-white bg-orange-700 px-6 rounded-md text-black text-lg font-extrabold
+           mx-2 absolute bottom-10'
+           onClick={() => handleClick(n)}>ADD TO CART</button>
+          
+          
+                     
         </div>
         <img
         className='w-full h-96 object-cover rounded-xl'
@@ -89,4 +94,14 @@ export default function Menu()  {
 /* 
 <div key={n.id} className='w-full  h-auto px-10 py-2 bg-slate-300 
         backdrop-blur-md rounded-md shadow-lg'>
+
+        {cart.includes(n) ? (
+            <button className='border-white bg-orange-700 px-6 rounded-md text-black text-lg font-extrabold
+           mx-2 absolute bottom-10'
+           onClick={() => handleClick(n)}>Remove from cart</button>
+          ) : (
+            <button className='border-white bg-orange-700 px-6 rounded-md text-black text-lg font-extrabold
+           mx-2 absolute bottom-10'
+           onClick={() => handleClick(n)}>Order Now</button>
+          )}
         */

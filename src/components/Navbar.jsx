@@ -7,7 +7,7 @@ import { useState } from 'react';
 //import { actionType } from "./Utilis/reducer";
 
 
-export default function Navbar() {
+export default function Navbar({setShow}) {
  const [isMenu, setisMenu] = useState(true);
  
  
@@ -15,14 +15,14 @@ return(
         <header className = 'p-0 bg-black flex justify-between items-center relative z-[100]'>
           <span>
         <img src='./1.gif'className = 'h-10 inline' alt=''/>
-        <h className = "text-white text-3xl font-bold p-3 mr-8"> 
-        <NavLink to="Main">BWIBO RESTAURANT
-       </NavLink>  </h>
+        <h className = "text-white text-3xl font-bold p-3 mr-8" onClick={()=>setShow(true)}> 
+        BWIBO RESTAURANT
+         </h>
         </span>   
           <ul className ="relative text-white font-bold sm:self-center text-3xl border-t sm:border-none space-x-7 flex ml-8 p-3">
          
         
-          <li className = "relative flex item-center justify-center">
+          <li className = "relative flex item-center justify-center" onClick={()=>setShow(false)}>
             
           <MdAddShoppingCart className='text-textcolor text-4xl cursor-pointer h-12' />
           
