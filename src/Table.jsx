@@ -2,40 +2,42 @@ import { heroData2 } from './Utilis/Data';
 import { useState } from 'react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { initializeApp } from 'firebase/app';
+//import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, set } from 'firebase/database';
 
-const firebaseConfig = {
+/*const firebaseConfig = {
   apiKey: "AIzaSyDPhBJZTH9Gyw2lgG3JXX_D1aDqYg8c_cE",
   authDomain: "bwibs-9b3b6.firebaseapp.com",
   projectId: "bwibs-9b3b6",
   storageBucket: "bwibs-9b3b6.appspot.com",
   messagingSenderId: "458317329774",
   appId: "1:458317329774:web:18586db8b2f787edff7d7f"
-};
-const database = getDatabase();
+};*/
+//const database = getDatabase();
 
 export default function Table() {
   const [valid, setvalid] = useState(true);
-  const [show, setShow] = useState(true);
+  //const [show, setShow] = useState(true);
 
   const handleSubmit = (e) => {
-   e.preventDefault();
+   e.preventDefault();   
+   const book_email = document.getElementById('book-email');
    const book_date = document.getElementById('book-date');
    const book_time = document.getElementById('book-time');
    const book_number = document.getElementById('book-number');
 
-   if(!book_date.value || !book_time.value || !book_number.value ){
+   if(!book_email.value || !book_date.value || !book_time.value || !book_number.value ){
     alert('Please fill in the above details');
    } else{
     writeUserData();
    }
    function writeUserData() {
     const db = getDatabase();
-    set(ref(db, 'data/'), {
-      bookigdate: book_date.value,
-     bookigtime: book_time.value,
-      bookignumber: book_number.value,
+    set(ref(db, 'data/'), {     
+      bookingemail: book_email.value,
+      bookingdate: book_date.value,
+     bookingtime: book_time.value,
+      bookingnumber: book_number.value,
     });
    }
    alert('Your reservation has been confirmed')
@@ -75,8 +77,12 @@ setvalid(!valid + BookPageDiv.classList.add('show'));
 <p className='text-base font-bold px-3'> {n.name}</p>
 <p className='text-base font-semibold px-3'>{n.desc}</p>
 
-<div className='space-y-2'>
-  <form action='' onClick={handleSubmit} >
+<div className='space-y-1'>
+  <form action=''  >
+      <div className="input data">
+      <p>Email:</p>
+   <input type='Enter  your email' name='' id='book-email' />
+    </div>
     <div className="i">
       <p>Date: </p>
    <input type='date' name='' id='book-date' />
@@ -86,15 +92,19 @@ setvalid(!valid + BookPageDiv.classList.add('show'));
    <input type='time' name='' id='book-time' />
     </div>
     <div className="input data">
-      <p>No.of Guests</p>
+      <p>No.of Guests:</p>
    <input type='guests' name='' id='book-number' />
+    </div>
+    <div className="input data">
+      <p>Meal Period:</p>
+   <input type='Mealperiod i.e lunch,breakfast' name='' id='book-meal' />
     </div>
   </form>
 </div>
 
 <div className='px-4'>
 <p className='text-base font-bold px-3'>
-  <button className='bg-cyan-600 px-2 rounded-md' type='submit'>RESERVE</button></p>
+  <button className='bg-cyan-600 px-2 rounded-md' type='submit' onClick={handleSubmit}>RESERVE</button></p>
 </div>
 </div>
     </div>     

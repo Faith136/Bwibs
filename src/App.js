@@ -11,12 +11,15 @@ import Userbox from "./Userbox";
 import Menu from "./Menu";
 import Table from "./Table";
 import About from "./About";
+import Admin from "./Admin";
 import Loader from "./Loader";
 import CreateItem from "./CreateItem";
 import Cart from "./Cart";
 import CartContainer from "./components/CartContainer";
+import { useState } from "react";
+import { heroData } from "./Utilis/Data";
 //import { Route, Router } from 'react-router-dom';
-import { useState } from 'react';
+//import { useState } from 'react';
 //import { useEffect } from "react";
 /*
 import Register from './auth/Register';
@@ -27,51 +30,67 @@ import { onAuthStateChanged } from 'firebase/auth';
 */
  function App() {
   
-const [show, setShow] = useState();
-const [cart, setCart] = useState([]);
+  const [cartItem, setCartItem] = useState([]);
 
-const handleClick = (n) => {
-  if (cart.indexOf(n) !== -1) return;
-  setCart([...cart, n]);
-}
+  const handleAddProduct = (product) =>{
+    const ProductExist = cartItem.find((item) => item.id === product.id);
+      if(ProductExist){
+        setCartItem(cartItem && cartItem.map((item) => item.id === product.id ? 
+        {...ProductExist, quantity: ProductExist.quantity + 1}: item)
+        );
+      }
+      else{
+          setCartItem([...cartItem, {...product, quantity: 1}])
 
-const handleChange = (n, d) => {
-  const ind = cart.indexOf(n);
-  const arr = cart;
-  arr[ind].amount += d;
+        }
+    
+        }
 
-  if (arr[ind].amount === 0) arr[ind].amount = 1; setCart([...arr]);
-};
+        const handleRemoveProduct = (product) =>{
+          const ProductExist = cartItem.find((item) => item.id === product.id);
+            if(ProductExist.quantity === 1){
+              setCartItem(cartItem && cartItem.filter((item) => item.id !== product 
+             )
+              );
+            }
+            else{
+                setCartItem(cartItem.map((item) => item.id === product.id ? 
+                {...ProductExist, quantity: ProductExist.quantity - 1} : item));
+      
+              }
+          
+              };
 
-//useEffect(() => {
- // console.log("cart change");
-//}, [cart])
+             const handleCartClearence = () =>{
+              setCartItem([]);
+             }
 
   return (
-  <>   
+    
   <BrowserRouter> 
-     <Navbar setShow={setShow} size={cart.length}/> 
+  <> 
+     <Navbar cartItem={cartItem} heroData={heroData}/> 
         
-      {
-        show ? (<Menu handleClick={handleClick}/>) : (
-        <Cart cart={cart} setCart={setCart} handleChange={handleChange}/>
-        )
-      }
+     
     
      
      <Routes>
       <Route path="/Userbox" element={<Userbox />} />
       <Route path="/Main" element={<Main />} />
-      <Route path="/Menu" element={<Menu />} />
+      <Route path="/Menu" element={<Menu heroData={heroData}
+       handleAddProduct={handleAddProduct} />} />
       <Route path="/Table" element={<Table />} />
       <Route path="/About" element={<About />} />
-      <Route path="/Cart" element={<Cart />} />
-      <Route path="/CartContainer" element={<CartContainer />} />
+      <Route path="/Admin" element={<Admin />} />
+      <Route path="/Cart" element={<Cart cartItem={cartItem}
+       handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearence={handleCartClearence} />} />
+      <Route path="/CartContainer" element={<CartContainer  />} />
       <Route path="/Loader" element={<Loader />} />
       <Route path="/CreateItem" element={<CreateItem />} />
      </Routes>
+     </>
    </BrowserRouter> 
-    </>
+    
   );
 }
 
