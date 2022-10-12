@@ -83,7 +83,7 @@ onClick={() =>handleCartClearence()}>Clear</p>
 
 </div>
 
-    <button className='w-1/4 p-2 rounded full bg-purple-500 text-gray-50 text-lg 
+    <button className='w-1/4 p-2 rounded-xl bg-purple-500 text-gray-50 text-lg 
     hover:shadow-lg transition-all duration-150 ease-out'
     onClick={() => alert("Order confirmed")}>Confirm Order</button>
 

@@ -32,7 +32,9 @@ export default function Form({
     <button className='font-medium text-base text-violet'>Forgot password?</button>
 </div>
 <div className='mt-8 flex flex-col gap-y-4'>
-    <button className='active:scale -[.98] active:duration-75 py-3 rounded -xl bg-violet-500 text-white text-lg font-bold'>Sign in</button>
+    <button className='active:scale -[.98] active:duration-75 py-3 rounded -xl bg-violet-500
+     text-white text-lg font-bold'
+     >Sign in</button>
     <button>
         Sign-in with Google</button>
         </div>

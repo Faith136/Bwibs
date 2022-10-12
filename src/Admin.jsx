@@ -1,9 +1,10 @@
 import React from 'react'
-import Createitem from './CreateItem'
+
 import { useState, useEffect } from 'react';
 import Register from './auth/Register';
 import { auth } from './fire';
 import { onAuthStateChanged } from 'firebase/auth';
+import Dashboard from './Dashboard';
 
 
 function Admin() {
@@ -27,8 +28,9 @@ const unSubscribeAuth = onAuthStateChanged(auth,
 
 if(authState === null) return <div className='font-bold text-center'>loading...</div>
 if(authState === 'register') return <Register setAuthState={setAuthState} setUser={setUser} />
-if(user) return <Createitem setAuthState={setAuthState} setUser={setUser} />
+if(user) return <Dashboard setAuthState={setAuthState} setUser={setUser} />
   return (
+    
     <Register />
   )
 }
