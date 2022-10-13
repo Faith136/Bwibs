@@ -6,7 +6,7 @@ import { useState } from 'react';
 //import { actionType } from "./Utilis/reducer";
 
 
-export default function Navbar({ cartItem, user }) {
+export default function Navbar({ cartItem }) {
  const [isMenu, setisMenu] = useState(true);
  
  
@@ -40,13 +40,11 @@ return(
                 <button  className='p-2 hover:bg-gray-300 rounded-md'>Login</button>
           </NavLink>
 
-          {
-      user && user.email === "faithodongo9@gmail.com" && (
+         
         <Link to="Admin">
            <p className='p-2 hover:bg-gray-300 rounded-md'>Admin</p>
               </Link>
-      )
-    }
+     
            
                        
               <Link to="About">

@@ -13,7 +13,7 @@ function Dashboard({ children }) {
         icon:<MdShoppingBasket/>,
     },
     {
-        path:"/createItem",
+        path:"/sam",
         name:"ORDERS",
         icon:<MdShoppingBag/>,
     },

@@ -30,8 +30,14 @@ if(authState === null) return <div className='font-bold text-center'>loading...<
 if(authState === 'register') return <Register setAuthState={setAuthState} setUser={setUser} />
 if(user) return <Dashboard setAuthState={setAuthState} setUser={setUser} />
   return (
+    <>
+    {
+      user && user.email === "faithodongo19@gmail.com" && (
+       <Register />
+      )
+    }
+    </>     
     
-    <Register />
   )
 }
 
