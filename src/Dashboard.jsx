@@ -1,5 +1,5 @@
 import React from 'react'
-import { MdOutlineKeyboardBackspace, MdShoppingBag, MdShoppingBasket } from 'react-icons/md'
+import { MdMenuBook, MdOutlineKeyboardBackspace, MdShoppingBasket } from 'react-icons/md'
 import { useState } from 'react';
 
 import { NavLink } from "react-router-dom";
@@ -13,9 +13,9 @@ function Dashboard({ children }) {
         icon:<MdShoppingBasket/>,
     },
     {
-        path:"/sam",
+        path:"/Details",
         name:"ORDERS",
-        icon:<MdShoppingBag/>,
+        icon:<MdMenuBook/>,
     },
    ]
   return (

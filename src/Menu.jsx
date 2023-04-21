@@ -3,13 +3,15 @@ import React from 'react'
 import { NavLink, Outlet } from "react-router-dom";
 import { MdFavoriteBorder } from "react-icons/md";
 import { AiOutlineSearch } from 'react-icons/ai';
-
+import { useState } from 'react';
 
 
 
 export default function Menu({ heroData, handleAddProduct })  {
+const [searchTerm] = useState("");
 
 
+const searchHandler = () => {};
   return (
     <div className="relative">
       <div className=' flex space-x-4 text-lg font-bold px-5 py-2'>
@@ -37,8 +39,9 @@ export default function Menu({ heroData, handleAddProduct })  {
           className='bg-transparent p-2 w-full focus:outline-none'
           type='text'
           placeholder='Search foods'
-          
-        />
+          term={searchTerm}
+          searchKeyword={searchHandler}
+                  />
         
       </div>
   </div>

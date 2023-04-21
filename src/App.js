@@ -19,6 +19,7 @@ import CartContainer from "./components/CartContainer";
 import { useState } from "react";
 import { heroData } from "./Utilis/Data";
 import Dashboard from "./Dashboard";
+import Details from "./Details";
 //import { Route, Router } from 'react-router-dom';
 //import { useState } from 'react';
 //import { useEffect } from "react";
@@ -89,6 +90,7 @@ import { onAuthStateChanged } from 'firebase/auth';
       <Route path="/CartContainer" element={<CartContainer  />} />
       <Route path="/Loader" element={<Loader />} />
       <Route path="/CreateItem" element={<CreateItem />} />
+      <Route path="/Details" element={<Details />} />
      </Routes>
      </>
    </BrowserRouter> 

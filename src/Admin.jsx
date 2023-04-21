@@ -31,12 +31,9 @@ if(authState === 'register') return <Register setAuthState={setAuthState} setUse
 if(user) return <Dashboard setAuthState={setAuthState} setUser={setUser} />
   return (
     <>
-    {
-      user && user.email === "faithodongo19@gmail.com" && (
+    
        <Register />
-      )
-    }
-    </>     
+      </>     
     
   )
 }

@@ -74,14 +74,20 @@ onClick={() =>handleCartClearence()}>Clear</p>
     </div>
     
     <div className='gap-y-2'>
-    <div>
+    <div className='gap-y-2'>
       <p>Make payments by:</p>
         <input type="checkbox" />
         
         <label className='font-medium text-base'>Cash</label>
+        <div>
+        <button className='w-1/8 p-2 rounded-xl bg-green-500 text-gray-50 text-lg 
+    hover:shadow-lg transition-all duration-150 ease-out'
+    >M-PESA</button>
     </div>
-
+    </div>
+        
 </div>
+
 
     <button className='w-1/4 p-2 rounded-xl bg-purple-500 text-gray-50 text-lg 
     hover:shadow-lg transition-all duration-150 ease-out'
