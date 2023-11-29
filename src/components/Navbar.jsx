@@ -2,13 +2,29 @@ import * as React from 'react';
 import { MdAddShoppingCart } from "react-icons/md";
 import { NavLink, Link } from "react-router-dom"
 import Button from './Button';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+
 //import { actionType } from "./Utilis/reducer";
 
 
 export default function Navbar({ cartItem }) {
  const [isMenu, setisMenu] = useState(true);
  
+ let menuRef = useRef();
+
+ useEffect(() => {
+  let handler = (e)=>{
+    if (!menuRef.current.contains(e.target)){
+setisMenu(false);
+console.log(menuRef.current);
+    }
+  };
+  document.addEventListener('mousedown', handler);
+
+  return() =>{
+    document.removeEventListener('mousedown', handler)
+  }
+ })
  
 return( 
         <header className = 'p-0 bg-black flex justify-between items-center relative z-[100]'>
@@ -30,7 +46,7 @@ return(
             <p className='text-xl text-black font-bold'>{cartItem.length}</p>
           </div></NavLink>
            </li>           
-           <li className=''>
+           <li className='' ref={menuRef}>
            <img src="./avatar.png"onClick={() =>setisMenu(!isMenu)} className="w-10 min-w-[60px] h-16min-h-[40px]
             drop-shadow-xl cursor-pointer" alt="userprofile" />
              

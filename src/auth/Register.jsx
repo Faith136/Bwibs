@@ -10,6 +10,7 @@ export default function Register({
     const [email, setEmail] = useState('');
     const [password, setpassword] =useState('');
 
+
 const onSignUpHandle = () => {
     if(email !== null && password !== null){
         createUserWithEmailAndPassword(auth, email, password)

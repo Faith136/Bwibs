@@ -46,6 +46,7 @@ const searchHandler = () => {};
       </div>
   </div>
 
+
     <div className='w-full grid grid-cols-2 px-1 gap-x-2 gap-y-3'>
     
       {heroData && heroData.map(n =>(
@@ -87,4 +88,25 @@ const searchHandler = () => {};
   
     </div>
   );
-}
+  }
+  /*<div className='flex space-x-4 text-lg font-bold px-5 py-2'>
+<div>
+  <div class="rounded-full w-18 md:w-12 h-18 md:h-12 overflow-hidden">
+                <img class="w-full h-full  object-cover opacity-90" src="juice.png" alt="img" />
+                        </div>
+                        <p>Break</p>
+           </div>  
+           <div>
+  <div class="rounded-full w-18 md:w-12 h-18 md:h-12 overflow-hidden">
+                <img class="w-full h-full object-cover opacity-90" src="burger.png" alt="img" />
+                        </div>
+                        <p>Lunch</p>
+           </div> 
+           <div>
+  <div class="rounded-full w-18 md:w-12 h-18 md:h-12 overflow-hidden">
+                <img class="w-full h-full object-cover opacity-90" src="burger.png" alt="img" />
+                        </div>
+                        <p>Dinner</p>
+           </div>
+            </div>       
+             */

@@ -5,6 +5,7 @@ import Register from './auth/Register';
 import { auth } from './fire';
 import { onAuthStateChanged } from 'firebase/auth';
 import Dashboard from './Dashboard';
+import NavPage from './Navpage';
 
 
 function Admin() {
@@ -33,6 +34,25 @@ if(user) return <Dashboard setAuthState={setAuthState} setUser={setUser} />
     <>
     
        <Register />
+       <React.Fragment>
+   
+
+    {/* sidebar section */}
+    <section>
+      
+      <div className='grid grid-cols-12 '>
+       
+        <div className='col-span-3 bg-black pl-2 sm: text-sm md:col-span-2 h-[1500px]'>
+            <Dashboard />
+        </div>
+      
+
+        <div className='col-span-9 h-[1500px] pl-2 md:col-span-10 bg-cyan-400'>
+            <NavPage />
+        </div>
+      </div>
+    </section>
+  </React.Fragment>
       </>     
     
   )

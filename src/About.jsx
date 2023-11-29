@@ -20,6 +20,9 @@ function About() {
         <p className='font-semi-bold text-black'>We  offer delivery of our services but we are yet to implement a system that a
           customer can use it when following up an order.
         </p>
+        <p className='font-semi-bold text-black'>To make a follow up of your order please call 
+        <span className='font-bold text-md'>+254 700000000</span>.
+        </p>
         <p className='text-lg font-extrabold p-2'>Location</p>
         <p className='font-semi-bold text-black'>We are located at Lavington</p>
         

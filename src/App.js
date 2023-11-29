@@ -72,13 +72,13 @@ import { onAuthStateChanged } from 'firebase/auth';
   <BrowserRouter> 
   <> 
      <Navbar cartItem={cartItem} heroData={heroData}/> 
-        
+      
      
     
      
      <Routes>
       <Route path="/Userbox" element={<Userbox />} />
-      <Route path="/Main" element={<Main />} />
+      <Route path="/" element={<Main />} />
       <Route path="/Menu" element={<Menu heroData={heroData}
        handleAddProduct={handleAddProduct} />} />
       <Route path="/Table" element={<Table />} />

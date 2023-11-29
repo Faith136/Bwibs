@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Outlet } from "react-router-dom";
 //import Cart from "./Cart";
 
 
@@ -19,8 +19,10 @@ export default function Main() {
 <p className="py-1 font-bold text-3xl">Click profile to get started.</p>
                 
             </div>
-            <img className='w-full max-h-[600px] object-cover' src="https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="/" />
+            <img className='w-full max-h-[600px] object-cover'
+             src="https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="/" />
         </div>
+        <div><Outlet /></div>
     </div>
     
     );

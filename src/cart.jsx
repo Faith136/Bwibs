@@ -2,7 +2,7 @@ import React from 'react';
 //import { useEffect } from 'react';
 import { MdRemove, MdAdd, MdOutlineKeyboardBackspace } from 'react-icons/md'
 //import { heroData } from './Utilis/Data';
-
+import { NavLink } from "react-router-dom";
 
 const Cart = ({ cartItem, handleAddProduct, handleRemoveProduct, handleCartClearence }) =>{
  /* const n = heroData;*/
@@ -14,7 +14,8 @@ const Cart = ({ cartItem, handleAddProduct, handleRemoveProduct, handleCartClear
     <div className='px-14 w-11/12 bg-white drop-shadow-md flex flex-col
     '>
 <div className='w-full flex items-center justify-between p-4 cursor-pointer'>
-  <MdOutlineKeyboardBackspace className='text-3xl w-20 ' />
+  <NavLink to="/Menu">
+  <MdOutlineKeyboardBackspace className='text-3xl w-20 ' /></NavLink>
 <p className='text-textcolor text-lg font-bold'>cart</p>
 
 <p className='flex item-center gap-1 p-1 px-2 my-2 bg-gray-100 rounded-md
@@ -73,7 +74,7 @@ onClick={() =>handleCartClearence()}>Clear</p>
       <p className='text-black text-xl font-semibold'>Ksh.{totalprice}</p>
     </div>
     
-    <div className='gap-y-2'>
+    <div className='gap-y-2'id='paymentoption'>
     <div className='gap-y-2'>
       <p>Make payments by:</p>
         <input type="checkbox" />

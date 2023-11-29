@@ -27,3 +27,9 @@
    {id : 3, name: 'Reserve a table in this area', desc : 'Location: Rooftop Outside',  imageSrc : 'tr1.png'},
     {id : 4, name: 'Reserve a table in this area', desc : 'Location:Besides the Garden', imageSrc : 'tr3.png'}
   ]
+  export const mealPeriod = [
+    {id : 1, name: 'Breakfast', imageSrc : 'burger.png'},
+    {id : 2, name: 'Lunch', imageSrc : 'burger.png'},
+   {id : 3, name: 'Dinner', imageSrc : 'burger.png'},
+    {id : 4, name: 'Soft Drinks', imageSrc : 'burger.png'}
+  ]
