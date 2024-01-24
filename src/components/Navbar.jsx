@@ -30,7 +30,7 @@ return(
         <header className = 'p-0 bg-black flex justify-between items-center relative z-[100]'>
           <span>
         <img src='./1.gif'className = 'h-10 inline' alt=''/>
-        <h className = "text-white lg:text-3xl font-bold lg:p-3 lg:mr-8 sm:mr-4 sm:text-xl"> 
+        <h className = "text-white lg:text-3xl font-bold p-3 lg:mr-8 sm:mr-6 sm:text-xl"> 
         <NavLink to="Main">
         BWIBO RESTAURANT</NavLink>
          </h>
@@ -41,7 +41,7 @@ return(
         
           <li className = "relative flex item-center justify-center" >
             <NavLink to="./Cart">
-          <MdAddShoppingCart className='text-textcolor text-4xl cursor-pointer h-14 w-10' />
+          <MdAddShoppingCart className='text-textcolor lg:text-4xl sm:text-2xl cursor-pointer h-14 w-10' />
           
           <div className='absolute -top-2 -right-3 w-6 h-6 rounded-full bg-orange-400 flex items-center justify-center'>
             <p className='text-xl text-black font-bold'>{cartItem.length}</p>
