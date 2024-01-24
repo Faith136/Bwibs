@@ -11,7 +11,7 @@ export default function Main() {
             {/* Overlay */}
             <div className='absolute w-full h-full max-h-[500px] text-white flex flex-col items-center justify-center'>
             
-                <p className="font-extrabold text-4xl py-2">Hello,Welcome to Bwibo Restaurant.</p>
+                <p className="lg:font-extrabold sm:font-bold lg:text-4xl sm:text-2xl py-2">Hello,Welcome to Bwibo Restaurant.</p>
 <p className="py-1  font-bold text-3xl">Get your food delivered to your doorstep from.</p>
 <p className="py-1 font-bold text-3xl" text-3xl>our restaurant.Be sure to also reserve a table with our app.</p>
 <img src="Burger.png" className="w-[150px] py-14 rounded-full hover:bg-current transition

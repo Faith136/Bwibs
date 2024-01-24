@@ -30,24 +30,25 @@ return(
         <header className = 'p-0 bg-black flex justify-between items-center relative z-[100]'>
           <span>
         <img src='./1.gif'className = 'h-10 inline' alt=''/>
-        <h className = "text-white text-3xl font-bold p-3 mr-8"> 
+        <h className = "text-white lg:text-3xl font-bold lg:p-3 lg:mr-8 sm:mr-4 sm:text-xl"> 
         <NavLink to="Main">
         BWIBO RESTAURANT</NavLink>
          </h>
         </span>   
-          <ul className ="relative text-white font-bold sm:self-center text-3xl border-t sm:border-none space-x-7 flex ml-8 p-3">
+          <ul className ="relative text-white font-bold sm:self-center lg:text-3xl sm:text-xl border-t 
+          sm:border-none space-x-7 flex ml-8 p-3 items-center justify-center">
          
         
           <li className = "relative flex item-center justify-center" >
             <NavLink to="./Cart">
-          <MdAddShoppingCart className='text-textcolor text-4xl cursor-pointer h-12' />
+          <MdAddShoppingCart className='text-textcolor text-4xl cursor-pointer h-14 w-10' />
           
           <div className='absolute -top-2 -right-3 w-6 h-6 rounded-full bg-orange-400 flex items-center justify-center'>
             <p className='text-xl text-black font-bold'>{cartItem.length}</p>
           </div></NavLink>
            </li>           
            <li className='' ref={menuRef}>
-           <img src="./avatar.png"onClick={() =>setisMenu(!isMenu)} className="w-10 min-w-[60px] h-16min-h-[40px]
+           <img src="./avatar.png"onClick={() =>setisMenu(!isMenu)} className="w-10 min-w-[60px] h-16 min-h-[40px]
             drop-shadow-xl cursor-pointer" alt="userprofile" />
              
           {isMenu &&  (<div className='absolute bg-white flex flex-col px-2 py-3 shadow-xl

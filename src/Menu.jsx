@@ -14,7 +14,7 @@ const [searchTerm] = useState("");
 const searchHandler = () => {};
   return (
     <div className="relative">
-      <div className=' flex space-x-4 text-lg font-bold px-5 py-2'>
+      <div className=' flex space-x-4 lg:text-lg sm:text-sm font-bold lg:px-5 sm:px-1 py-2'>
       <div className=''>   
         <NavLink
         activeClassName='border-indigo-500 text-gray-900'
