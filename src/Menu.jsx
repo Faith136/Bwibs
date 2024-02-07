@@ -8,48 +8,53 @@ import { useState } from 'react';
 
 
 export default function Menu({ heroData, handleAddProduct })  {
-const [searchTerm] = useState("");
+  const [filter, setFilter] = useState("");
 
+  const searchText = (event) =>{
+    setFilter(event.target.value);
+  }
+  let dataSearch = heroData.filter(n =>{
+    return Object.keys(n).some(key =>
+      n[key].toString().toLowerCase().includes(filter.toString().toLowerCase()))
+  });      
+         
 
-const searchHandler = () => {};
   return (
     <div className="relative">
-      <div className='flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 lg:text-lg sm:text-sm font-bold lg:px-5 sm:px-1 py-2'>
-
-        <div className='lg:flex-shrink-0'>
-          <NavLink
-            activeClassName='border-indigo-500 text-gray-900'
-            className='hover:text-cyan-500 inline-flex px-1 pt-1 border-b-2 border-transparent text-'
-            to="/Menu"
-          >
-            Menu
-          </NavLink>
+    <div className=' flex space-x-4 lg:text-lg sm:text-sm font-bold lg:px-5 sm:px-1 py-2'>
+      <div className=''>   
+        <NavLink
+        activeClassName='border-indigo-500 text-gray-900'
+        
+        className=' hover:text-cyan-500 inline-flex px-1 pt-1 border-b-2 border-transparent text-'
+        to="/Menu">Menu
+       </NavLink>        
         </div>
+        <div className=''>
+    <NavLink
+    activeClassName='border-indigo-500 text-gray-900'
+    
+    className='hover:text-cyan-500 inline-flex px-1 pt-1 border-b-2 border-transparent text-'
+    to="/Table"> Table Reservation
+       </NavLink>
+       
 
-        <div className='lg:flex-shrink-0'>
-          <NavLink
-            activeClassName='border-indigo-500 text-gray-900'
-            className='hover:text-cyan-500 inline-flex px-1 pt-1 border-b-2 border-transparent text-'
-            to="/Table"
-          >
-            Table Reservation
-          </NavLink>
-        </div>
-
-        <div className='lg:flex-shrink-0 bg-gray-200 rounded-full flex justify-items-end px-2 w-full sm:w-[400px] lg:w-[500px]'>
-          <AiOutlineSearch size={30} />
-          <input
-            className='bg-transparent p-2 w-full focus:outline-none'
-            type='text'
-            placeholder='Search foods'
-            term={searchTerm}
-            searchKeyword={searchHandler}
-          />
-        </div>
+  </div>
+  <div className='bg-gray-200 rounded-full flex justify-items-end px-2 w-[200px] sm:w-[400px] lg:w-[500px]'>
+        <AiOutlineSearch size={30}  />
+        <input
+          className='bg-transparent p-2 w-full focus:outline-none'
+          type='text'
+          placeholder='Search foods'
+          value={filter}
+          onChange={searchText.bind(this)}
+                  />
+        
+      </div>
       </div>
 
       <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 px-1 gap-x-2 gap-y-3'>
-        {heroData && heroData.map(n => (
+        {dataSearch.map(n => (
           <div key={n.id} n={n} className='w-full h-auto'>
             <div className='rounded-xl relative'>
               {/* Overlay */}
